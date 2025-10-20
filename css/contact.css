@@ -100,3 +100,97 @@ header {
     font-weight: 600;
     font-size: 30px;
 }
+
+/* ===== Music overlay ===== */
+.music-overlay {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  z-index: 10050;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6), 0 0 18px rgba(91,0,255,0.06);
+  padding: 8px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  min-width: 220px;
+  max-width: 320px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+/* inner layout */
+.music-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* info */
+.music-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.music-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.music-status {
+  font-size: 12px;
+  color: rgba(234,234,234,0.85);
+}
+
+/* controls */
+.music-controls {
+  display: flex;
+  gap: 6px;
+}
+.music-btn {
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-grid;
+  place-items: center;
+  box-shadow: 0 6px 14px rgba(91,0,255,0.14);
+  transition: transform 0.14s ease, filter 0.14s ease;
+}
+.music-btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.music-btn:active { transform: translateY(0); }
+
+/* small icon style */
+.music-btn[aria-label="Play"] { width: 40px; height: 36px; }
+.music-btn[aria-label="Stop"] { width: 40px; height: 36px; }
+
+/* subtle pulsing glow when playing */
+.music-overlay.playing {
+  box-shadow: 0 8px 28px rgba(91,0,255,0.18), 0 0 32px rgba(199,125,255,0.06);
+}
+
+/* mobile: jangan ganggu konten, taruh lebih kecil */
+@media (max-width: 600px) {
+  .music-overlay {
+    right: 12px;
+    bottom: 12px;
+    min-width: 180px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+  .music-title { font-size: 13px; }
+  .music-status { font-size: 11px; }
+  .music-btn { padding: 6px; font-size: 13px; width: 36px; height: 34px; }
+}
+
+/* keyboard focus */
+.music-btn:focus { outline: 2px solid rgba(123,58,237,0.35); outline-offset: 2px; }

@@ -32,7 +32,25 @@
             </footer>
         </div>
     </div>
-    
+        <!-- Music overlay (tempel ini di akhir body, sebelum script.js) -->
+        <div id="musicOverlay" class="music-overlay" aria-live="polite">
+        <div class="music-inner">
+            <div class="music-info">
+            <div id="musicTitle" class="music-title">Chris Grey - LET THE WORLD BURN</div>
+            <div id="musicStatus" class="music-status">Stopped</div>
+            </div>
+            <div class="music-controls">
+            <button id="musicPlayBtn" class="music-btn" aria-label="Play">
+                ▶
+            </button>
+            <button id="musicStopBtn" class="music-btn" aria-label="Stop">
+                ⏹
+            </button>
+            </div>
+            <!-- audio element (ganti src sesuai path file mp3 yang kamu punya) -->
+            <audio id="siteAudio" src="./database/Chris Grey - LET THE WORLD BURN (Official Lyric Video).mp3" preload="none"></audio>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
