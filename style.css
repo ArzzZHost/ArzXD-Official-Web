@@ -1,0 +1,72 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+  --primary: #1A002B;     /* Ungu gelap (background utama) */
+  --secondary: #5B00FF;   /* Ungu neon terang */
+  --accent: #C77DFF;      /* Ungu muda bercahaya */
+  --highlight: #8B5CF6;   /* Biru-ungu lembut */
+  --glow: #BB00FF;        /* Efek cahaya neon */
+  --text: #EAEAEA;        /* Teks putih keabu */
+  --background: #0E0018;  /* Hitam keunguan */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  background-color: var(--primary);
+  box-shadow: 0 0 15px var(--secondary);
+  color: white;
+  padding: 15px 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+.atasan-web {
+    display: grid;
+    place-items: center;
+}
+.atasan-web img {
+    border-radius: 50%;
+    box-shadow: 0 0 35px var(--secondary);
+}
+
+.deskripsi {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.deskripsi h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.deskripsi h1:hover {
+    color: var(--accent);
+    text-shadow: 0 0 5px var(--accent);
+}
+
+.deskripsi p {
+    font-size: 18px;
+    color: var(--text);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 550px;
+    padding: 20px 0;
+}
