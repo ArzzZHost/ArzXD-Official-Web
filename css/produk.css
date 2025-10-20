@@ -47,9 +47,22 @@ header {
     margin-top: 20px;
 }
 .deskripsi h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+  font-size: 36px;
+  margin-bottom: 10px;
+  animation: glowPulse 2.5s infinite ease-in-out;
 }
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px var(--accent);
+    color: var(--accent);
+  }
+  50% {
+    text-shadow: 0 0 25px var(--secondary);
+    color: var(--text);
+  }
+}
+
 .deskripsi h1:hover {
     color: var(--accent);
     text-shadow: 0 0 5px var(--accent);
@@ -172,12 +185,13 @@ header {
   border-radius: 10px;
   cursor: pointer;
   margin-top: 15px;
-  transition: 0.3s;
+  transition: all 0.3s ease; /* animasi lembut */
   box-shadow: 0 0 15px var(--accent);
 }
 
 .buy-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(1.2);
   box-shadow: 0 0 25px var(--glow);
 }
 
@@ -185,4 +199,30 @@ header {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1); }
+}
+
+.overlay {
+  animation: fadeOverlay 0.25s ease forwards;
+}
+
+@keyframes fadeOverlay {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.produk img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.4s ease;
+}
+
+.produk > div:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px var(--accent);
 }
