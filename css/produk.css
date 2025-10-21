@@ -261,20 +261,23 @@ header {
     font-size: 26px;
   }
 
+  /* 🔹 Ubah jadi grid 2 kolom di HP */
   .produk {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom sejajar */
+    gap: 15px;
+    justify-items: center;
   }
 
   .produk > div {
-    width: 85%;
+    width: 90%;
+    max-width: 160px;
     padding: 15px;
   }
 
   .produk img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   .overlay-content {
@@ -295,6 +298,17 @@ header {
   footer {
     font-size: 13px;
     margin-bottom: 10px;
+  }
+}
+
+/* Tambahkan ini di bawahnya — biar di HP super kecil (<=400px) tetap 1 kolom */
+@media (max-width: 400px) {
+  .produk {
+    grid-template-columns: 1fr; /* jadi 1 kolom */
+  }
+
+  .produk > div {
+    max-width: 220px;
   }
 }
 
